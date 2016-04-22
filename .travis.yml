@@ -6,6 +6,6 @@ install:
   - pip install -r requirements/production.txt
   - pip install coveralls
 script:
-  - python manage.py
+  - python manage.py test
 after_success:
   - coveralls
