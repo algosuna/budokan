@@ -1,3 +1,0 @@
--r base.txt
-
-coveralls==1.1
