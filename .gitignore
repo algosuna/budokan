@@ -51,6 +51,10 @@ coverage.xml
 
 # Django stuff:
 *.log
+*.sqlite
+secrets.json
+staticfiles
+venv
 
 # Sphinx documentation
 docs/_build/
@@ -58,5 +62,14 @@ docs/_build/
 # PyBuilder
 target/
 
-#Ipython Notebook
+# Ipython Notebook
 .ipynb_checkpoints
+
+# Frontend
+bower_components
+
+# OSX stuff
+*.DS_Store
+
+# Sublime stuff
+*.sublime-*
