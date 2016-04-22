@@ -1,0 +1,60 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMA Championship Registration Form</title>
+
+    <!-- css -->
+    {% include 'material/includes/material_css.html' %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <!-- end css -->
+  </head>
+  <body>
+
+    <div class="container z-depth-1" id="content">
+
+      <div class="row">
+
+        <div class="col s12">
+          <h1 class="header">IMA Championship 2016 <br><small>Registration Form</small></h1>
+        </div>
+
+        {% block content %}
+        {% endblock %}
+
+      </div><!-- end .row -->
+
+    </div><!-- end .container -->
+
+    <footer class="page-footer red lighten-1 z-depth-1">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">About</h5>
+            <p class="grey-text text-lighten-4">The IMA Championship is a yearly karate competition in Utah. This year, the hosting dojo is IMA Budokan run by Niang Sensei.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="http://www.utahshotokankarate.com/" target="_blank">IMA Budokan website</a></li>
+              <li><a class="grey-text text-lighten-3" href="http://www.imakarate.com/" target="_blank">IMA official website</a></li>
+              <li><a class="grey-text text-lighten-3" href="http://www.teamusa.org/USA-Karate" target="_blank">USA Karate official website</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2016 IMA Budokan
+          <span class="right">Made with &#9829; by <a class="grey-text text-lighten-4" href="https://github.com/andyosuna" target="_blank">Andy Osuna</a></span>
+        </div><!-- end .container -->
+      </div><!-- end .footer-copyright -->
+    </footer><!-- end footer -->
+
+    <!-- javascript -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    {% include 'material/includes/material_js.html' %}
+    <!-- end javascript -->
+  </body>
+</html>
