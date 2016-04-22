@@ -1,0 +1,7 @@
+Django==1.9.5
+django-material==0.7.0
+django-paypal==0.3.2
+pytz==2016.3
+requests==2.9.1
+six==1.10.0
+whitenoise==3.0
