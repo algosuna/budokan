@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load material_form %}
+
+{% block content %}
+<form class="col s12" action="" method="POST">
+  {% csrf_token %}
+
+  {% form %}
+  {% endform %}
+
+  <button type="submit" name="_next" class="btn red right">Submit</button>
+</form><!-- end form -->
+{% endblock %}
