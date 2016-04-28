@@ -31,9 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    # Frontend styling apps
-    'material',
-    'material.frontend',
+    # Admin styling
     'material.admin',
 
     # Django apps
@@ -45,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Third party apps
+    'material',
     'paypal.standard.ipn',
 
     # Local apps
