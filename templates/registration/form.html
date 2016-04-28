@@ -17,12 +17,27 @@
         <div class="switch">
           <label for="id_is_metric">
             Off
-            <input id="id_is_metric" name="is_metric" type="checkbox">
+            {{ form.is_metric }}
             <span class="lever"></span>
             On
           </label>
         </div>
         <small class="help-block">Check if your measurements are in metric units.</small>
+      </div>
+    </div>
+    {% endpart %}
+    {% part form.accept_terms prefix %}
+    <div class="row">
+      <div class="col s12 disclaimer">
+        <h5>ADULT &amp; MINOR AMATEUR ATHLETIC WAIVER &amp; RELEASE OF LIABILITY</h5>
+        <p>In consideration of being allowed participating in any way in the 2016 IMA Budokan Championship athletic/sport program, and related events and activities, you:</p>
+        <ol>
+          <li>Agree that prior to participating the participant and/or Parent or Guardian (if under 18), will inspect the facilities and equipment to be used, and if the participant and/or parent or guardian, believes anything is unsafe, they will immediately advised the supervisor of the Rocky Mountain Championship or other Tournament officials of each condition(s) and refuse to participate.</li>
+          <li>Acknowledge and fully understands that each participant will be engaging in activities that involve risk of serious injury, including permanent disability and death, and serve social and economic losses which might result not only from their action, inaction or negligence but the actions, inaction or negligence of others, the rules of play, or the condition of the promises or of any equipment used. Further, the participant, and/or parent or guardian acknowledge that there may be other risks not known or not reasonably foreseeable at this time. The participant and/or parent or guardian assumes all the forgoing risks and accepts personal responsibility for the damages following such injury, permanent disability or death.</li>
+          <li>Releases, waives, discharge and covenants not to sue the International MartialArts Association, Mr. Cyrus Madani, the USA Karate its officers, its affiliated clubs, regional sports organizations, their respective administrators, directors, agents, coaches and other employees of the organization, other participants, sponsoring agencies, sponsors, advertisers, and if applicable, owners and lessees of premises used to conduct the event, all of which are hereinafter referred to as “releases” from any and all liability to each of the undersigned, his or her heirs and next of kin for any and all claims, demands, losses or damages on account of injury including death or damage to property, caused or alleged to be caused in whole or in part by the negligence of the release or otherwise.</li>
+          <li><strong>All entries are final; no refunds will be given.</strong> I fully understand that any medical treatment given will be of a first aid treatment type only. I consent that any pictures furnished by me or any pictures taken of me in connection with the tournament can be used for publicity, promotion or television showing now or in the future, and I waive compensation in regard thereto. All participation in any event or class in this tournament is by permission only. The Director or his authorized agent(s) reserve the right to refuse entry to any person, school, team or club.</li>
+        </ol>
+        <p>By checking "I agree" on this online registration you agree the above waiver and release, understand that they have given up substantial rights voluntarily.</p>
       </div>
     </div>
     {% endpart %}
