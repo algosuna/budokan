@@ -65,15 +65,15 @@ class Registration(models.Model):
     phone_number = models.IntegerField()
     email = models.EmailField(_('email address'))
     belt_type = models.CharField(max_length=4, choices=BELT_TYPE_CHOICES)
-    belt_level = models.IntegerField(
-        choices=BELT_LEVEL_CHOICES,
+    belt_level = models.CharField(
+        choices=BELT_LEVEL_CHOICES, max_length=2,
         help_text=_('Belt number level in kyu or dan.')
     )
     years_training = models.IntegerField(
         help_text=_('Enter 0 if less than 1 year.')
     )
 
-    events = models.CharField(max_length=8)
+    events = models.CharField(max_length=40)
 
     instructor_name = models.CharField(max_length=60)
     dojo_name = models.CharField(max_length=255)
