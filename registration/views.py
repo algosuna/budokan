@@ -5,6 +5,10 @@ from paypal.standard.forms import PayPalPaymentsForm
 from .forms import RegistrationForm
 
 
+class HomeView(TemplateView):
+    template_name = 'registration/home.html'
+
+
 class RegistrationFormView(FormView):
     template_name = 'registration/form.html'
     form_class = RegistrationForm
