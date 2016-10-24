@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load material_form %}
 
+{% block page_title %}
+Payment
+{% endblock %}
+
 {% block content %}
 <form class="col s12" action="" method="POST">
   {% csrf_token %}

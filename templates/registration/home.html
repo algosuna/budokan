@@ -1,7 +1,28 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
+{% block page_title %}
+Online Registration
+{% endblock %}
+
 {% block content %}
-<img src="{% static 'img/logo_300.gif' %}">
-<p>Imagen de deveras</p>
+<h5>Dear instructors, officials, Coaches, athletes, and parents:</h5>
+
+<p>I am pleased to announce the Tenth IMA Annual Karate Championship in Utah scheduled to take place on <em>Saturday, November 12th, 2016 in Salt Lake City, Utah</em>. The tournament will be held at the majestic Northwest Recreation Center (1255 Clark Ave —1300 W 300 N, SLC, UT 84116) only 10 minutes away from Salt Lake City International Airport and 5 minutes from Downtown Salt Lake.</p>
+
+<p>This year’s event is an important milestone for me personally because it marks the tenth anniversary of my first hosting. I will be honored to have your support in making it a memorable open karate tournament. I know I can count on your participation.</p>
+
+<p><a class="btn btn-large red" href="{% url 'registration:registration_form' %}">Register here</a> &nbsp; &nbsp; <span class="lighten-3">or download the registration form <a href="">here</a>.</span></p>
+
+<p>The tournament will begin at 9 am. Registration remains open until November 8th. Pass this deadline a $20-late fee will apply.</p>
+
+<p>I look forward to seeing you on November 12th.</p>
+
+<address>
+  Amadou Niang,<br>
+  <em>Chief Instructor</em><br>
+  <strong>IMA BUDOKAN</strong><br>
+  TEL: 801 450 6172<br>
+  EMAIL: niangam2@yahoo.com<br>
+</address>
 {% endblock %}

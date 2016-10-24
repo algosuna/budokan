@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Third party apps
+    'localflavor',
     'material',
     'paypal.standard.ipn',
 

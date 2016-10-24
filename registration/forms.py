@@ -1,17 +1,10 @@
 from django import forms
-from material import Layout, Fieldset, Row, Column, Span2, Span3, Span4
+from material import Layout, Fieldset, Row, Column, Span2, Span3
 
 from .models import Registration
 
 
 class RegistrationForm(forms.ModelForm):
-
-    EVENT_CHOICES = (
-        ('kata', 'Kata'),
-        ('kumite', 'Kumite'),
-        ('tkata', 'Team kata'),
-        ('tkumite', 'Team kumite'),
-    )
 
     class Meta:
         model = Registration
@@ -23,9 +16,9 @@ class RegistrationForm(forms.ModelForm):
         )
 
     events = forms.MultipleChoiceField(
-        choices=EVENT_CHOICES, widget=forms.CheckboxSelectMultiple
+        choices=Registration.EVENT_CHOICES, widget=forms.CheckboxSelectMultiple
     )
-    accept_terms = forms.BooleanField(required=True)
+    accept_terms = forms.BooleanField(required=True, label='I agree')
 
     layout = Layout(
         Fieldset(
@@ -37,9 +30,12 @@ class RegistrationForm(forms.ModelForm):
         ),
         Fieldset(
             'Competition Info',
-            Row(Span3('gender'), Span2('height'), Span2('weight'), Span4('is_metric')),
+            Row('gender', 'weight', 'is_metric'),
             Row('belt_type', 'belt_level', 'years_training'),
-            Row(Span3('events'), Column('instructor_name', 'dojo_name', span_columns=9)),
+            Row('years_training', 'competition_level'),
+            Row(Span3('events'), Column(
+                'instructor_name', 'dojo_name', 'karate_style', span_columns=9
+            )),
         ),
         'accept_terms',
     )

@@ -9,6 +9,10 @@ class HomeView(TemplateView):
     template_name = 'registration/home.html'
 
 
+class WaiverView(TemplateView):
+    template_name = 'registration/waiver.html'
+
+
 class RegistrationFormView(FormView):
     template_name = 'registration/form.html'
     form_class = RegistrationForm

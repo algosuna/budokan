@@ -2,13 +2,20 @@ from django.core.mail import send_mail
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
+from localflavor.us import us_states
 
 
 class Registration(models.Model):
+
+    """
+    Model for individual registration.
+    """
+
     GENDER_CHOICES = (
         ('m', 'Male'),
         ('f', 'Female'),
     )
+
     BELT_LEVEL_CHOICES = (
         ('13', '13th'),
         ('12', '12th'),
@@ -24,21 +31,28 @@ class Registration(models.Model):
         ('2', '2nd'),
         ('1', '1st'),
     )
+
     BELT_TYPE_CHOICES = (
         ('kyu', 'Kyu - colored belts'),
         ('dan', 'Dan - black belts'),
     )
+
+    LEVEL_CHOICES = (
+        ('beg', 'Beginner'),
+        ('nov', 'Novice'),
+        ('int', 'Intermediate'),
+        ('adv', 'Advanced'),
+    )
+
     COUNTRY_CHOICES = (
         ('US', 'United States'),
     )
-    US_STATE_CHOICES = (
-        ('CO', 'Colorado'),
-        ('MO', 'Missouri'),
-        ('NV', 'Nevada'),
-        ('NY', 'New York'),
-        ('PA', 'Pennsylvania'),
-        ('TX', 'Texas'),
-        ('UT', 'Utah'),
+
+    EVENT_CHOICES = (
+        ('kata', 'Kata'),
+        ('kumite', 'Kumite'),
+        ('tkata', 'Team kata'),
+        ('tkumite', 'Team kumite'),
     )
 
     first_name = models.CharField(_('first name'), max_length=30)
@@ -48,7 +62,6 @@ class Registration(models.Model):
     )
     birth_date = models.DateField()
     weight = models.IntegerField()
-    height = models.CharField(max_length=5)
     is_metric = models.BooleanField(
         help_text=_('Check if your measurements are in metric units.')
     )
@@ -56,7 +69,7 @@ class Registration(models.Model):
     address2 = models.CharField(max_length=255)
     city = models.CharField(max_length=62)
     state = models.CharField(
-        max_length=3, choices=US_STATE_CHOICES, default='UT'
+        max_length=3, choices=us_states.STATE_CHOICES, default='UT'
     )
     postal_code = models.CharField(max_length=10)
     country = models.CharField(
@@ -72,6 +85,8 @@ class Registration(models.Model):
     years_training = models.IntegerField(
         help_text=_('Enter 0 if less than 1 year.')
     )
+    competition_level = models.CharField(max_length=4, choices=LEVEL_CHOICES)
+    karate_style = models.CharField(max_length=100)
 
     events = models.CharField(max_length=40)
 
@@ -108,3 +123,10 @@ class Registration(models.Model):
         Sends an email to this registered competitor.
         """
         send_mail(subject, message, from_email, [self.email], **kwargs)
+
+    def get_cost(self):
+        pass
+
+
+class TeamRegistration(models.Model):
+    name
